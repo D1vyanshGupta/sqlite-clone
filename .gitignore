@@ -1,0 +1,58 @@
+# macOS system files
+.DS_Store
+
+# Compiled object files and executables
+*.o
+*.obj
+*.lo
+*.la
+*.al
+*.libs
+*.so
+*.so.*
+*.a
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+
+# C++ compiler-generated files
+*.gch
+*.pch
+
+# CMake build artifacts
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+build/
+build-*/
+CMakeUserPresets.json
+
+# Logs and debugging
+*.log
+core.*
+vgcore.*
+*.stackdump
+
+# Backup and temp files
+*~
+*.swp
+*.bak
+*.tmp
+*.old
+*.orig
+*.rej
+
+# Testing and coverage
+*.gcno
+*.gcda
+*.gcov
+
+# Conan and vcpkg
+conanbuild/
+conaninfo.txt
+*.lock
+.vscode/
+.vcpkg_installed/

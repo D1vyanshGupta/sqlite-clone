@@ -1,0 +1,53 @@
+{
+    "version": 4,
+    "cmakeMinimumRequired": {
+        "major": 4,
+        "minor": 0,
+        "patch": 3
+    },
+    "configurePresets": [
+        {
+            "name": "conan-debug",
+            "hidden": true,
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build/debug",
+            "description": "Debug configuration with Conan dependencies",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "BUILD_TESTING": "ON",
+                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/build/debug/conan_toolchain.cmake"
+            }
+        },
+        {
+            "name": "conan-release",
+            "hidden": true,
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build/release",
+            "description": "Release configuration with Conan dependencies",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "BUILD_TESTING": "OFF",
+                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/build/release/conan_toolchain.cmake"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "build-debug",
+            "configurePreset": "conan-debug",
+            "description": "Build using Debug configuration"
+        },
+        {
+            "name": "build-release",
+            "configurePreset": "conan-release",
+            "description": "Build using Release configuration"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "test-debug",
+            "configurePreset": "conan-debug",
+            "description": "Run tests using Debug build"
+        }
+    ]
+}
